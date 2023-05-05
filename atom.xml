@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.jovishaw.top</id>
+    <title>jovishaw&apos;s notes</title>
+    <updated>2023-05-05T09:57:27.950Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.jovishaw.top"/>
+    <link rel="self" href="https://www.jovishaw.top/atom.xml"/>
+    <subtitle>爱 学习 生活</subtitle>
+    <logo>https://www.jovishaw.top/images/avatar.png</logo>
+    <icon>https://www.jovishaw.top/favicon.ico</icon>
+    <rights>All rights reserved 2023, jovishaw&apos;s notes</rights>
+    <entry>
+        <title type="html"><![CDATA[Markdown笔记]]></title>
+        <id>https://www.jovishaw.top/post/markdown-bi-ji/</id>
+        <link href="https://www.jovishaw.top/post/markdown-bi-ji/">
+        </link>
+        <updated>2023-05-04T03:27:08.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="什么是-markdown">什么是 Markdown</h2>
+<p>Markdown 是一种文本到 HTML 的转换工具。Markdown 允许用纯文本格式进行编写，通俗易懂，比较直观，然后把纯文本格式转换为结构化的 XHTML/HTML 格式。所以说 Markdown 是有俩部分组成的：（1）纯文本格式化语法；（2）一个 Perl 写的翻译器，把纯文本转换为 HTML。</p>
+<p>Markdown 的语法完全由标点符号组成，这些标点符号进行挑选，尽量直观。Markdown 的格式化语法之所以要如此设计，主要是为了增加可读性，HTML 高度结构化，没那么直观，所以 Markdown 语法借鉴了纯文本电子邮件格式使得纯文本格式的 Markdown 文档直观易懂。</p>
+<p>Markdown 不能取代 HTML，它只对应了 HTML 标签的一小部分，没有 HTML 那么多功能。Markdown 是一种书写的格式，HTML 是一种发布的格式。</p>
+<h2 id="markdown-格式语法的要点">Markdown 格式语法的要点</h2>
+<p>这一节说一下 Markdown 语法的要点，每个功能完整详细的说明在下一节。</p>
+<hr>
+<h3 id="段落">段落</h3>
+<p>段落是一行或者多行连续的文本，段落之间由一个或者多个空行分割。看起来像空行的行就是空行了，只包含空格或制表符的行就是空行。注意一下，正常的段落不应该有缩进空格或者制表符，否则会引入非语义的空格而影响阅读，也会使 Markdown 难以解析。</p>
+<hr>
+<h3 id="标题">标题</h3>
+<p>Markdown 提供两种样式的标题：Setext 和 atx。Setext 样式标题涉及 HTML 中的<code>&lt;h1&gt;</code>和<code>&lt;h2&gt;</code>标题，分别用由等号（=）和连字符（-）组成的下划线来表示。atx 样式涉及 HTML 中的<code>&lt;h1&gt;</code>至<code>&lt;h6&gt;</code>标题，在标题行的行首放 1 至 6 个散列符号（#），散列符号的数量对应 HTML 中的标题级别。</p>
+<hr>
+<h3 id="块引用">块引用</h3>
+<p>块引用使用尖括号（&gt;）表示。</p>
+<hr>
+<h3 id="代码">代码</h3>
+<p>在常规段落中，通过将文本用反引号包裹创建代码 span，文本中的与号（&amp;）和尖括号（&lt;或者&gt;）会自动转换为 HTML 里的实体，这使得在 Markdown 里展示 HTML 代码。</p>
+<p>对于多行的代码块，需要将块的每一行缩进 4 个空格或 1 个制表符。就像代码 span 一样，&amp;、&lt; 和 &gt; 字符将自动转义。</p>
+<hr>
+<h3 id="强调">强调</h3>
+<p>Markdown 使用星号（*）和下划线（_）来表示强调的范围。</p>
+<hr>
+<h3 id="列表">列表</h3>
+<p>无序列表使用星号（*）、加号（+）或连字符（-）来标记，三种符号等效。</p>
+<p>有序列表使用阿拉伯数字加英文句号作为标记。</p>
+<p>可以通过将段落缩进 4 个空格或 1 个制表符来创建多段落列表项。</p>
+<hr>
+<h3 id="链接">链接</h3>
+<p>Markdown 支持使用两种方式创建链接：内联和引用。两种方式都是用方括号包裹超链接文本。</p>
+<p>内联链接在方括号之后直接加括号，括号里写链接地址。链接地址之后还可以写上标题，对应<code>&lt;a&gt;</code>元素里的<code>title</code>属性。</p>
+<p>引用样式链接允许通过在文档其他地方定义的名称来引用链接：</p>
+<pre><code>我参考了[John Gruber的原始设计文档][1]和[Markdown指南中文版][2]
+
+[1]: https://daringfireball.net/projects/markdown/        &quot;daringfireball&quot;
+[2]: https://www.markdown.xyz/  &quot;Markdown指南&quot;
+</code></pre>
+<p>引用名称不一定是数字，也可能是包含字母、数字和空格的短语，不区分大小写。</p>
+<hr>
+<h3 id="图片">图片</h3>
+<p>和链接语法比较像，就是在左方括号（[）前面多了个感叹号（!）。也是支持内联和引用格式创建图片。</p>
+<h2 id="markdown语法">Markdown语法</h2>
+<hr>
+<h3 id="内嵌html">内嵌HTML</h3>
+<p>对于Markdown语法没有涉及的标记，直接用HTML的标签书写就行，不用另外采取什么特殊格式表明正在使用HTML标签。</p>
+<p>但是<strong>有一个例外</strong>，对于块级元素（如<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code>等），必须用空行与周围的内容分割，并且开始和结束标签不能缩进。Markdown会识别这种情况，不会再在块上加额外的<code>&lt;p&gt;</code>标签了。</p>
+<p>比如，要在本页中加入一个表格：</p>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;ID&lt;/td&gt;
+        &lt;td&gt;SHA256&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p>一行两列的表格：</p>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>SHA256</td>
+    </tr>
+</table>
+<blockquote>
+<p>Markdown 格式化语法不会在块级 HTML 标记中处理。例如，不能在 HTML 块中使用 Markdown 风格的 <em>emphasis</em>。但是Markdown格式化语法可以在跨度级标签（如<code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code>等）内处理,与块级 HTML 标签不同，Markdown 语法在跨度级标签内处理。</p>
+</blockquote>
+<hr>
+<h3 id="特殊字符的自动转义">特殊字符的自动转义</h3>
+<p>在 HTML 中，有两个字符需要特殊处理：&lt; 和 &amp;。左尖括号用于开始标签； &amp; 符号用于表示 HTML 实体。如果您想将它们用作文字字符，则必须将它们作为实体转义，例如<code>&amp;lt;</code>, 和 <code>&amp;amp;</code>。</p>
+<p>Markdown 允许自然地使用这些字符，自动处理所有必要的转义。比如，如果使用一个&amp;符号作为 HTML 实体的一部分，它保持不变；否则它将被翻译成 <code>&amp;amp;</code>。</p>
+<p>所以，如果在文章中包含版权符号，可以这样写：</p>
+<pre><code>&amp;copy;
+</code></pre>
+<p>Markdown不会处理它。但如果这样写：</p>
+<pre><code>P&amp;G
+</code></pre>
+<p>Markdown其实会把&amp;翻译成 <code>&amp;amp;</code>。</p>
+<blockquote>
+<p>在 Markdown 代码块中，尖括号（&lt;）和&amp;符号总是自动编码的。这使得使用 Markdown 编写 HTML 代码变得容易。 （与原始 HTML 不同，原始 HTML 是编写 HTML 语法的糟糕格式，因为示例代码中的每个 &lt; 和 &amp; 都需要转义。）</p>
+</blockquote>
+<hr>
+<h3 id="块元素">块元素</h3>
+<h4 id="段落和换行符">段落和换行符</h4>
+<p>段落是一行或者多行连续的文本，段落之间由一个或者多个空行分割。看起来像空行的行就是空行了，只包含空格或制表符的行就是空行。</p>
+<p>Markdown里多行也是一个段落，即使是结尾有换行符，也不会被翻译成<code>&lt;br /&gt;</code>。如果想在Markdown加<code>&lt;br /&gt;</code>，得在行尾加两个及以上的空格再换行。</p>
+<h4 id="标题-2">标题</h4>
+<p>Markdown 提供两种样式的标题：Setext 和 atx。</p>
+<p>Setext 样式标题涉及 HTML 中的<code>&lt;h1&gt;</code>和<code>&lt;h2&gt;</code>标题，分别用由等号（=）和连字符（-）组成的下划线来表示。任意数量的=和-都行。</p>
+<p>atx 样式涉及 HTML 中的<code>&lt;h1&gt;</code>至<code>&lt;h6&gt;</code>标题，在标题行的行首放 1 至 6 个散列符号（#），散列符号的数量对应 HTML 中的标题级别。</p>
+<h4 id="块引用-2">块引用</h4>
+<p>Markdown 使用 email-style &gt; 字符进行块引用。如果硬包装文本并在每一行之前放一个 &gt; 看起来最好：</p>
+<pre><code>&gt; 实践
+&gt; 
+&gt; 理论
+</code></pre>
+<p>也可以只在第一行前加一个&gt;：</p>
+<pre><code>&gt; 实践
+理论
+</code></pre>
+<p>块引用支持嵌套：</p>
+<pre><code>&gt; 实践
+&gt;&gt;理论
+</code></pre>
+<p>块引用可以包含其他 Markdown 元素，包括标题、列表和代码块：</p>
+<pre><code>&gt; ## 标题
+&gt; 
+&gt; 1.   列表元素一
+&gt; 2.   列表元素二
+&gt; 
+&gt; 代码：
+&gt; 
+&gt;     c.collector.Visit(c.url)
+</code></pre>
+<h4 id="列表-2">列表</h4>
+<p>支持无序列表和有序列表。无序列表使用星号（*）、加号（+）或连字符（-）来标记，三种符号等效。有序列表使用阿拉伯数字加英文句号作为标记。</p>
+<blockquote>
+<p>用于标记列表的实际数字对 Markdown 生成的 HTML 输出没有影响。</p>
+</blockquote>
+<p>列表标记通常从左边距开始，但最多可以缩进三个空格。列表标记后必须跟一个或多个空格或制表符。<br>
+列表项可能包含多个段落。列表项中的每个后续段落都必须缩进 4 个空格或一个制表符：</p>
+<pre><code>1.  这是一个包含两个段落的列表项
+    
+    第二段
+
+2.  第二个列表项
+</code></pre>
+<p>要将块引用放在列表项中，块引用的 &gt; 分隔符需要缩进一个制表符。要将代码块放在列表项中，代码块需要缩进两次（两个制表符）。</p>
+<p>值得注意的是，通过编写如下内容可能会意外触发有序列表：</p>
+<pre><code>1971. Nice year.
+</code></pre>
+<p>为避免这种情况，使用反斜杠转义句点：</p>
+<pre><code>1971\. Nice year.
+</code></pre>
+<h4 id="代码块">代码块</h4>
+<p>预格式化代码块用于标记源代码。代码块的行不形成正常的段落，而是按字面解释。 Markdown 将代码块包装在<code>&lt;pre&gt;</code>和 <code>&lt;code&gt;</code>标签中。</p>
+<p>代码块内不处理常规 Markdown 语法。例如，星号只是代码块中的文字星号。这意味着使用 Markdown 编写 Markdown 自己的语法也很容易。</p>
+<h4 id="水平分割线">水平分割线</h4>
+<p>可以通过将三个及以上连字符（-）、星号（*）或下划线（_）单独放在一行上来生成水平线标记 (<code>&lt;hr /&gt;</code>)。还可以在连字符或星号之间使用空格。以下每一行都会产生一条水平线：</p>
+<pre><code>* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+</code></pre>
+<hr>
+<h3 id="跨度元素">跨度元素</h3>
+<h4 id="链接-2">链接</h4>
+<p>Markdown 支持两种样式的链接：内联和引用。在这两种样式中，链接文本都由 <code>[方括号]</code> 分隔。</p>
+<p>隐式链接名称快捷方式允许省略链接的名称，在这种情况下，链接文本本身用作名称。只需使用一组空的方括号⟩——例如，要将单词“Google”链接到 google.com 网站，可以简单地写：</p>
+<pre><code>[Google][]
+</code></pre>
+<p>然后定义链接：</p>
+<pre><code>[Google]: https://google.com/
+</code></pre>
+<h4 id="强调-2">强调</h4>
+<p>Markdown将星号 (*) 和下划线 (_) 视为强调的指示符。用*或_包裹的文本将用HTML<code>&lt;em&gt;</code>标签包裹；双*或_将用HTML<code>&lt;strong&gt;</code>标记包裹。</p>
+<p>要在原本用作强调定界符的位置产生文字星号或下划线，可以反斜杠转义它：</p>
+<p>*被星号包裹*</p>
+<h4 id="代码范围">代码范围</h4>
+<p>要在代码范围内包含文字反引号字符，可以使用多个反引号作为开始和结束分隔符：</p>
+<p><code>代码块里有反引号 ` </code></p>
+<p>代码块周围的反引号分隔符可能包括空格，一个在开始之后，一个在结束之前。这允许在代码范围的开头或结尾放置文字反引号字符：</p>
+<pre><code>A single backtick in a code span: `` ` ``
+
+A backtick-delimited string in a code span: `` `foo` ``
+</code></pre>
+<hr>
+<h3 id="杂项">杂项</h3>
+<h4 id="自动链接">自动链接</h4>
+<p>Markdown支持为URL和电子邮件地址创建“自动”链接的快捷方式：只需用尖括号将URL或电子邮件地址括起来。这意味着如果你想显示一个URL或电子邮件地址的实际文本，并且让它成为一个可点击的链接，你可以这样做：</p>
+<pre><code>&lt;https://jovishaw.top/&gt;
+</code></pre>
+<p>主页：</p>
+<p><a href="https://jovishaw.top/">https://jovishaw.top/</a></p>
+<h4 id="转义">转义</h4>
+<p>Markdown 为以下字符提供反斜杠转义：</p>
+<pre><code>    \ 反斜杠
+    ` 反引号
+    * 星号
+    _ 下划线
+    {}  大括号
+    []  方括号
+    ()  括号
+    # 井号
+    + 加号
+    - 减号（连字符）
+    . 点
+    ! 感叹号
+</code></pre>
+<p>未完待续，持续更新。</p>
+]]></content>
+    </entry>
+</feed>
